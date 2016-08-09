@@ -1,0 +1,23 @@
+<div class="chat">
+    <div class="top">
+        <div class="avatar">
+            <img width="50" height="50" src="{{vm.currentChatMate.photo}}"> 
+            {{vm.currentChatMate.name}}
+        </div>
+    </div>
+    <div class="messages-box">
+        <ul class="">
+            <li ng-repeat="message in vm.messages[vm.userID]" ng-class="message.type === 'sent' ? 'sent-message' : 'received-message'">
+                <!--<div class="head">
+                    <span class="time">10:13 AM, Today</span>
+                    <span class="name">Буль</span>
+                </div>-->
+                <div>{{message.message}}</div>
+            </li>
+        </ul>
+    </div>
+    <div class="write-form">
+        <textarea placeholder="Type your message" name="e" id="texxt" rows="2" ng-model="vm.messageToSend" ng-keypress="vm.keyPress($event)"></textarea>
+        <span class="send" ng-click="vm.sendMessage()">Send</span>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="ui">
+    <div class="left-menu">
+        <menu class="list-friends hover-on-user">
+            <li ng-repeat="user in vm.users" ng-click="vm.switchUser(user.id)">
+                <img width="50" height="50" src="{{user.photo}}">
+                <div class="info">
+                    <div class="user">{{user.name}}</div>
+                    <div class="status" ng-class="user.status === 'Online' ? 'on' : 'off'">{{user.status}}</div>
+                </div>
+            </li>
+        </menu>
+    </div>
+    <chat-messages></chat-messages>
+</div>
